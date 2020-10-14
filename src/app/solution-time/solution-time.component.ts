@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-solution-time',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./solution-time.component.scss']
 })
 export class SolutionTimeComponent implements OnInit {
+
+  @Input()
+  public secondsPerSolution: number;
 
   constructor() { }
 
