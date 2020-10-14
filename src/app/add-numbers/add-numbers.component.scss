@@ -1,0 +1,29 @@
+.content {
+  text-align: center;
+
+  .numbers-box {
+    display: inline-flex;
+
+    span {
+      font-size: 10rem;
+
+      &:last-child {
+        text-align: initial;
+
+        input {
+          width: 15vw;
+          height: 25vh;
+          border: none;
+          outline: none;
+          text-align: center;
+        }
+
+        p {
+          border-top: 2px solid;
+          position: relative;
+          bottom: 23%;
+        }
+      }
+    }
+  }
+}

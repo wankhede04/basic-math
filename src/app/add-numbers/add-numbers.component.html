@@ -1,3 +1,17 @@
-<p>
-  add-numbers works!
-</p>
+<div class="content">
+  <div class="numbers-box">
+    <span>5</span>
+    <span>+</span>
+    <span>9</span>
+    <span>=</span>
+    <span>
+      <input type="number" placeholder="0">
+      <p></p>
+    </span>
+  </div>
+  <div class="solution-time">
+    <app-solution-time
+      [secondsPerSolution]="averageSolutionTime"
+    ></app-solution-time>
+  </div>
+</div>

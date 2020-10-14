@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-numbers.component.scss']
 })
 export class AddNumbersComponent implements OnInit {
+  public averageSolutionTime: number;
 
   constructor() { }
 
   ngOnInit() {
+    this.averageSolutionTime = 1.2;
   }
-
 }
