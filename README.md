@@ -15,6 +15,7 @@
 ```bash
     ng serve
 ```
+Go to http://localhost:4200/
 
 ## Website
 [Basic Math](https://basic-math.herokuapp.com/)
