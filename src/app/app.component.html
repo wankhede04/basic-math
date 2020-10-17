@@ -1,3 +1,17 @@
 <div class="container">
-  <app-add-numbers></app-add-numbers>
+  <div class="instructions">
+    <strong>Instructions</strong>
+    <ul>
+      <li>There are two single digit numbers.</li>
+      <li>Write the sum of the two numbers in the input field, right side of '='.</li>
+      <li>If the entered value is correct, new equation gets updated.</li>
+      <li>If the entered value is incorrect, it'll be highlighted in red color.</li>
+    </ul>
+    <p> <strong>Note:</strong> For single digit number of sum value, first enter 0 (zero) then the value.</p>
+    <p>Example: for 2 write 02.</p>
+  </div>
+  <button id="start-game" class="btn btn-outline-primary" (click)="startPlaying()">Start Game</button>
+  <app-add-numbers
+    *ngIf="startGame"
+  ></app-add-numbers>
 </div>
