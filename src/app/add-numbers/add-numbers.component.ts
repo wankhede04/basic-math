@@ -1,7 +1,7 @@
 import { Component, OnDestroy } from '@angular/core';
 import { BehaviorSubject, Subscription } from 'rxjs';
 import { IAdditionValues, ITimeStamps } from '../models/addition';
-import { take } from 'rxjs/operators';
+import { take, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-add-numbers',
@@ -32,25 +32,26 @@ export class AddNumbersComponent implements OnDestroy {
 
   public getInputValue(inputValue: number) {
     this.subscription = this.calculationValues$.pipe(
-      take(1)
-    ).subscribe((calValues) => {
-      if (inputValue === calValues.firstDigit + calValues.secondDigit) {
-        this.averageSolutionTime.end = Date.now();
-
-        this.calculationValues$.next({
-          firstDigit: this.generateAdditionValues(),
-          secondDigit: this.generateAdditionValues()
-        });
-
-        this.inputValue = null;
-        this.isCorrectValue = true;
-        this.correctAnswers++;
-
-        this.getAverageTime();
-      } else {
-        this.isCorrectValue = false;
-      }
-    });
+      take(1),
+      tap((calValues) => {
+        if (inputValue === calValues.firstDigit + calValues.secondDigit) {
+          this.averageSolutionTime.end = Date.now();
+  
+          this.calculationValues$.next({
+            firstDigit: this.generateAdditionValues(),
+            secondDigit: this.generateAdditionValues()
+          });
+  
+          this.inputValue = null;
+          this.isCorrectValue = true;
+          this.correctAnswers++;
+  
+          this.getAverageTime();
+        } else {
+          this.isCorrectValue = false;
+        }
+      })
+    ).subscribe();
   }
 
   public generateAdditionValues(): number {
