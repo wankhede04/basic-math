@@ -1,17 +1,25 @@
 <div class="content">
   <div class="numbers-box">
-    <span>5</span>
+    <span>{{ (calculationValues$ | async).firstDigit }}</span>
     <span>+</span>
-    <span>9</span>
+    <span>{{ (calculationValues$ | async).secondDigit }}</span>
     <span>=</span>
     <span>
-      <input type="number" placeholder="0">
+      <input
+        type="number"
+        placeholder="0"
+        [(ngModel)]="inputValue"
+        (ngModelChange)="getInputValue(inputValue)"
+        [ngClass]="{ 'incorrect': !isCorrectValue}"
+        tabindex="-1"
+        autofocus
+      >
       <p></p>
     </span>
   </div>
   <div class="solution-time">
     <app-solution-time
-      [secondsPerSolution]="averageSolutionTime"
+      [secondsPerSolution]="averageSolutionTime.average"
     ></app-solution-time>
   </div>
 </div>
