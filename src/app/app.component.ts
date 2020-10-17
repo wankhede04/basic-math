@@ -5,4 +5,11 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent { }
+export class AppComponent {
+  public startGame: boolean = false;
+
+  public startPlaying() {
+    this.startGame = true
+    document.getElementById('start-game').blur();
+  }
+}
