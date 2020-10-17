@@ -1,6 +1,6 @@
 # Basic Math Game
 
-### A basic math game of addition between two number of single digits to calculate the brain efficiency.
+### A basic math game of addition between two numbers of single digit to know the brain efficiency.
 
 ## Install dependencies
 ```bash
