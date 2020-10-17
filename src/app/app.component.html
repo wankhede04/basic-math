@@ -10,7 +10,12 @@
     <p> <strong>Note:</strong> For single digit number of sum value, first enter 0 (zero) then the value.</p>
     <p>Example: for 2 write 02.</p>
   </div>
-  <button id="start-game" class="btn btn-outline-primary" (click)="startPlaying()">Start Game</button>
+  <button
+    id="start-game"
+    class="btn btn-outline-primary"
+    (click)="startPlaying()"
+    [disabled]="startGame"
+  >Start Game</button>
   <app-add-numbers
     *ngIf="startGame"
   ></app-add-numbers>
